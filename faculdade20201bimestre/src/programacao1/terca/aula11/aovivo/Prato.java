@@ -2,7 +2,7 @@ package programacao1.terca.aula11.aovivo;
 
 public class Prato {
 	private double preco;
-	private int numeroPedido;
+	private static int numeroPedido;
 	private String nomeGarcom;
 	public double getPreco() {
 		return preco;

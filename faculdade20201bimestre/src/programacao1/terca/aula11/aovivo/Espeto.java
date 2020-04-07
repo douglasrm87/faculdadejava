@@ -3,6 +3,15 @@ package programacao1.terca.aula11.aovivo;
 public class Espeto extends Prato {
 	private int qdadeTpCarne;
 	private boolean acessarBuffet;
+	
+	
+	
+	
+	public Espeto() {
+		super();
+		int q = getNumeroPedido();
+		setNumeroPedido(q++);
+	}
 	public int getQdadeTpCarne() {
 		return qdadeTpCarne;
 	}

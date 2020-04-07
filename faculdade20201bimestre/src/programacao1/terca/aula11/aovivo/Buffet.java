@@ -4,6 +4,12 @@ public class Buffet extends Prato {
 	private double precoKg;
 	private boolean livre;
 
+	public Buffet() {
+		super();
+		int q = getNumeroPedido();
+		setNumeroPedido(q++);
+	}
+
 	public double getPrecoKg() {
 		return precoKg;
 	}

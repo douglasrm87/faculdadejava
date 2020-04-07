@@ -3,6 +3,12 @@ package programacao1.terca.aula11.aovivo;
 public class Executivo extends Prato {
 	private double pesoRefeicao;
 
+	public Executivo() {
+		super();
+		int q = getNumeroPedido();
+		setNumeroPedido(q++);
+	}
+	
 	public double getPesoRefeicao() {
 		return pesoRefeicao;
 	}
