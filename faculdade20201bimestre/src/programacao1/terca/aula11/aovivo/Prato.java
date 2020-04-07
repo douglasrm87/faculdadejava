@@ -31,7 +31,7 @@ public class Prato {
 	}
 	public void setIdPedido(double idPedido) {
 		this.idPedido = idPedido;
-	}
+	}  
 	@Override
 	public String toString() {
 		return "Prato [preco=" + preco + ", numeroPedido=" + idPedido + ", nomeGarcom=" + nomeGarcom + "]";
