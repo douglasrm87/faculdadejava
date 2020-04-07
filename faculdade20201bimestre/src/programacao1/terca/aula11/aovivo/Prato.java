@@ -13,7 +13,7 @@ public class Prato {
 	public int getNumeroPedido() {
 		return numeroPedido;
 	}
-	public void setNumeroPedido(int numeroPedido) {
+	protected void setNumeroPedido(int numeroPedido) {
 		this.numeroPedido = numeroPedido;
 	}
 	public String getNomeGarcom() {
