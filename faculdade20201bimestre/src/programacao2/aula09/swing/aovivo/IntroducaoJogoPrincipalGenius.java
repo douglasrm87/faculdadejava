@@ -11,13 +11,10 @@ import programacao2.aula08.swing.aovivo.OuvinteLaranja;
 import programacao2.aula08.swing.aovivo.OuvinteVerde;
 import programacao2.aula08.swing.aovivo.OuvinteVermelho;
 
-public class IntroducaoJogoPrincipalGenius {
+public class IntroducaoJogoPrincipalGenius extends Jogo {
 
 	protected static final int _1000 = 200;
-	protected static JToggleButton botaoVerde;// referencia de objeto
-	protected static JToggleButton botaoAzul;// referencia de objeto
-	protected static JToggleButton botaoVermelho;// referencia de objeto
-	protected static JToggleButton botaoLaranja;// referencia de objeto
+	
 
 	// Adicionaremos ouvinte no botao computador
 	JButton computador = new JButton("Computador");
@@ -51,8 +48,8 @@ public class IntroducaoJogoPrincipalGenius {
 
 
 		// Vamos implementar o ouvinte do botão computador que fará alguns boitoes piscar.
+//		this.computador.addActionListener(new OuvinteComputador());
 		this.computador.addActionListener(new OuvinteComputador());
-
 		
 		
 		// carne da lasanha

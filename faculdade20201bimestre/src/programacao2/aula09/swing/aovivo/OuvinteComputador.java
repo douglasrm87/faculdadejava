@@ -7,70 +7,30 @@ import javax.swing.JOptionPane;
 
 import jogogenius.ComputadorDTO;
 
-public class OuvinteComputador extends IntroducaoJogoPrincipalGenius implements ActionListener {
+public class OuvinteComputador extends Jogo implements ActionListener {
 
-	/*
-	 * 
-	 * Etapa 01 new Thread(new Runnable() {
-	 * 
-	 * 
-	 * } );
-	 * 
-	 * Etapa 02 new Thread(new Runnable() {
-	 * 
-	 * @Override public void run() { // Código para o cotão piscar
-	 * 
-	 * }
-	 * 
-	 * } );
-	 * 
-	 * Etapa 03 new Thread(new Runnable() {
-	 * 
-	 * @Override public void run() { try { // Botoes pra piscar } } catch
-	 * (InterruptedException e) { e.printStackTrace(); }
-	 * JOptionPane.showMessageDialog(null, "Tente acertar a sequencia.");
-	 * 
-	 * } }).start();
-	 */
-
-	// sem thread
-//	@Override
-//	public void actionPerformed(ActionEvent e) {
-//		System.out.println("Cliquei no botao Computador");
-//		for (int i = 0; i < 15; i++) {
-//			try {
-//				Thread.sleep(200);
-//				IntroducaoJogoPrincipalGenius.botaoAzul.setSelected(false);
-//				Thread.sleep(200);
-//				IntroducaoJogoPrincipalGenius.botaoAzul.setSelected(true);
-//			} catch (InterruptedException e1) {
-//				e1.printStackTrace();
-//			}
-//		}
-//	}
-
-	// com thread
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("Cliquei no botao Computador");
-
+		System.out.println("Cliquei no botao computador");
+		
 		new Thread(new Runnable() {
-
 			@Override
 			public void run() {
-				for (int i = 0; i < 15; i++) {
-					try {
+				// esta parte do progrma entre um a thread.
+				try {
+					for (int i = 0; i < 5; i++) {
+						IntroducaoJogoPrincipalGenius.botaoLaranja.setSelected(true);
 						Thread.sleep(200);
-						IntroducaoJogoPrincipalGenius.botaoAzul.setSelected(false);
+						IntroducaoJogoPrincipalGenius.botaoLaranja.setSelected(false);
 						Thread.sleep(200);
-						IntroducaoJogoPrincipalGenius.botaoAzul.setSelected(true);
-					} catch (InterruptedException e1) {
-						e1.printStackTrace();
 					}
+				} catch (Exception e1) {
+					System.out.println("Problemas com o metodo sleep da classe Thread");
 				}
+				// fim
 			}
-
 		}).start();
+
 	}
 
 }
