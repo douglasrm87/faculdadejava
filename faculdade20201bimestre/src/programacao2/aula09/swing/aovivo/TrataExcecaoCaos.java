@@ -2,9 +2,9 @@ package programacao2.aula09.swing.aovivo;
 
 import java.util.Scanner;
 
-public class TrataExcecao {
+public class TrataExcecaoCaos {
 	public static void main(String[] args) {
-		new TrataExcecao().processar();
+		new TrataExcecaoCaos().processar();
 	}
 
 	Scanner leia = new Scanner(System.in);
