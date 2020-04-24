@@ -11,6 +11,15 @@ public class PrincipalPoliMorfismo {
 		
 		p = new Ave();
 		p.emitirSom();
+		
+		
+		Pet pVetor[] = new Pet [3];
+		pVetor[0] = new Ave();
+		pVetor[1] = new Cachorro();
+		pVetor[2] = new Gato();
+		for (int i = 0; i < pVetor.length; i++) {
+			pVetor[i].emitirSom();// para cada execução um resultado diferente
+		}
 				
 				
 		
