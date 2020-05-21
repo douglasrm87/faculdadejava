@@ -3,5 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="faculdade20201bimestre/src"/>
 	<classpathentry kind="lib" path="D:/devstudio12/workspace/Programacao1e2/faculdade20201bimestre/src/drivers-java/xstream-1.4.9.jar"/>
+	<classpathentry kind="lib" path="D:/devstudio12/workspace/Programacao1e2/faculdade20201bimestre/src/drivers-java/postgresql-42.2.12.jar"/>
 	<classpathentry kind="output" path="faculdade20201bimestre/bin"/>
 </classpath>
