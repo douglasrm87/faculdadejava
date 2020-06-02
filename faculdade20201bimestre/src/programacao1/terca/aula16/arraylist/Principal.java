@@ -9,6 +9,7 @@ public class Principal {
 	}
 
 	public void processar() {
+//		List<ItemPedido> - Generics ou Tipos PArametrizados.s
 		List<ItemPedido> listaItens = new ArrayList<>();
 		ItemPedido item = new ItemPedido("sapato", 10);
 		listaItens.add(item);
