@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import programacao2.aula14.jdbc.aovivo.Conexao;
 
@@ -19,10 +21,37 @@ public class ExemploPreparedStatement {
 	private void processar() {
 //		inserirVenda();
 //		selecionarTodos();
-		selecionarBymatricula();
+//		selecionarByMatricula();
+		List<Venda> listaVendas =  selecionarByMatriculaList();
+		for (Venda venda : listaVendas) {
+			System.out.println("Matricula:" + venda.getMatricula());
+			System.out.println("Nome:" + venda.getNome());
+			System.out.println("Data:" + venda.getData());
+		}
 	}
 
-	private void selecionarBymatricula() {
+	private List<Venda> selecionarByMatriculaList() {
+		Venda v1 = new Venda(123, "Douglas", new Date());
+		List <Venda> listaRetorno = new ArrayList<Venda>();
+		String sql = " SELECT matricula , nome , data FROM venda where matricula = ?";
+		Conexao minhaCon = new Conexao();
+		try (Connection con = minhaCon.conectarPostGree(); PreparedStatement stmt = con.prepareStatement(sql);) {
+			stmt.setInt(1, v1.getMatricula());
+			try (ResultSet rs = stmt.executeQuery();) {
+				while (rs.next()) {
+					Venda v = new Venda(rs.getInt(1),rs.getString(2),rs.getDate(3));
+					listaRetorno.add(v);
+				}
+				con.commit();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listaRetorno;
+	}
+	
+	
+	private void selecionarByMatricula() {
 		Venda v1 = new Venda(123, "Douglas", new Date());
 		String sql = " SELECT matricula , nome , data FROM venda where matricula = ?";
 		Conexao minhaCon = new Conexao();
@@ -34,6 +63,7 @@ public class ExemploPreparedStatement {
 					System.out.println("Nome:" + rs.getString(2));
 					System.out.println("Data:" + rs.getDate(3));
 				}
+				con.commit();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
